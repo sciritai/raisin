@@ -10,8 +10,9 @@ percentages = document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb 
 amounts = document.querySelectorAll("styles_currentDepositAmount___1bGpu");
 maturities = document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div > div > div > span");
 
-infos = percentages.forEach(function(val, index) {
-  new Info(amounts[index], val, maturities[index]);
+infos = []
+percentages.forEach(function(val, index) {
+  infos.push(new Info(amounts[index], val, maturities[index]));
 })
 
 document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div").forEach(function (div, index) {
