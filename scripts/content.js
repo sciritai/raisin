@@ -10,11 +10,11 @@ percentages = document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb 
 amounts = document.querySelectorAll("styles_currentDepositAmount___1bGpu");
 maturities = document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div > div > div > span");
 
-infos = percentages.foreach(function(val, index) {
+infos = percentages.forEach(function(val, index) {
   new Info(amounts[index], val, maturities[index]);
 })
 
-document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div").foreach(function (div, index) {
+document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div").forEach(function (div, index) {
   span = document.createElement("span");
   span.innerText = "€" + infos[index].percentage / 100 * infos[index].amount * infos[index].maturity;
   span.style.display = "block";
