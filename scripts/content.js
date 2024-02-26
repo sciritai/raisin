@@ -17,7 +17,7 @@ percentages.forEach(function(val, index) {
 
 document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div").forEach(function (div, index) {
   span = document.createElement("span");
-  span.innerText = "€" + ((infos[index].percentage / 100) * infos[index].amount) * (infos[index].maturity / 100);
+  span.innerText = "€" + Math.round(((infos[index].percentage / 100) * infos[index].amount) * (infos[index].maturity / 100));
   span.style.display = "block";
   div.appendChild(span);
 })
