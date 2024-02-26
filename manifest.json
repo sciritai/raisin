@@ -2,5 +2,14 @@
   "manifest_version": 3,
   "name": "Reading time",
   "version": "1.0",
-  "description": "A plugin to calculate the monetary value of the deposit today"
+  "description": "A plugin to calculate the monetary value of the deposit today",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*"
+      ]
+    }
+  ]
 }
