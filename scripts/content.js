@@ -12,12 +12,12 @@ maturities = document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb >
 
 infos = []
 percentages.forEach(function(val, index) {
-  infos.push(new Info(amounts[index].innerText.substring(4), val.innerText.substring(0, 4), maturities[index].match(/[0-9]*/g)[0]));
+  infos.push(new Info(parseInt(amounts[index].innerText.substring(4).replace(",", "")), parseFloat(val.innerText.substring(0, 4)), parseInt(maturities[index].innerText.match(/[0-9]*/g)[0])));
 })
 
 document.querySelectorAll("div.row.styles_depositCardMain___3a-Kb > div.styles_progressBar___2blqr > div").forEach(function (div, index) {
   span = document.createElement("span");
-  span.innerText = "€" + infos[index].percentage / 100 * infos[index].amount * infos[index].maturity;
+  span.innerText = "€" + ((infos[index].percentage / 100) * infos[index].amount) * (infos[index].maturity / 100);
   span.style.display = "block";
   div.appendChild(span);
 })
